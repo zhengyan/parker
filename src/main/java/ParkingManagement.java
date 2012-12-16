@@ -1,4 +1,4 @@
-package Parking;
+package main.java;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,25 +13,16 @@ import java.util.HashMap;
 public class ParkingManagement {
     private int carNumber;
     private int maxSpaceNum;
-    private ParkingBoy parkingBoy;
     private HashMap<Ticket, Car> carList = new HashMap<Ticket, Car>();
+    private HashMap<Ticket, ParkingLot> carVsLot = new HashMap<Ticket, ParkingLot>();
+    private ArrayList<ParkingLot> parkList = new ArrayList<ParkingLot>();
 
     public ParkingManagement(){
-
-    }
-    public ParkingManagement(ArrayList<ParkingLot> parkList) {
-        for(int i = 0; i < parkList.size(); i++){
-            maxSpaceNum = parkList.get(i).getParkSize();
-        }
-        parkingBoy = new ParkingBoy(parkList);
+        setMaxSpaceNum();
     }
 
     public void setMaxSpaceNum(int i) {
         maxSpaceNum = i;
-    }
-
-    public void setByParkList(ArrayList<ParkingLot> parkList){
-
     }
 
     public void setCarNumber(int i) {
@@ -42,10 +33,23 @@ public class ParkingManagement {
         return maxSpaceNum - carNumber;
     }
 
+    public void setMaxSpaceNum(){
+        maxSpaceNum = 0;
+        for(int i = 0; i < parkList.size(); i++){
+            maxSpaceNum += parkList.get(i).getParkSize();
+        }
+    }
+
+    public void addParkingLot(int maxParkingSize){
+        ParkingLot parkingLot = new ParkingLot(maxParkingSize);
+        parkList.add(parkingLot);
+        setMaxSpaceNum();
+    }
+
     public Ticket parkCar(Car car) {
         if(getFreeSpace() > 0){
             carNumber = carNumber + 1;
-            Ticket ticket = parkingBoy.parking(car);
+            Ticket ticket = new Ticket();
             carList.put(ticket, car);
             return ticket;
         } else{
@@ -65,5 +69,15 @@ public class ParkingManagement {
 
     public Car getCarByTID(Ticket ticket){
         return carList.get(ticket);
+    }
+
+    public ParkingLot getBetterParkingLot(){
+        ParkingLot parkingLot = null;
+        for(int i=0; i< parkList.size() - 1; i++){
+            if(parkList.get(i).getFreeNumber() > parkList.get(i + 1).getFreeNumber()){
+                parkingLot = parkList.get(i);
+            }
+        }
+        return parkingLot;
     }
 }

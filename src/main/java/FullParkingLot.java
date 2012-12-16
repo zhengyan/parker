@@ -1,11 +1,11 @@
-package Parking;
+package main.java;
 
 /**
  * Created with IntelliJ IDEA.
  * User: software
  * Date: 12-11-11
- * Time: 下午4:56
+ * Time: 下午4:58
  * To change this template use File | Settings | File Templates.
  */
-public class UnknownTID extends RuntimeException {
+public class FullParkingLot extends RuntimeException {
 }
