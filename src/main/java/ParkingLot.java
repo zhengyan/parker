@@ -32,11 +32,11 @@ public class ParkingLot {
         return carNumber;
     }
 
-    public void setParkId(int parkId){
+    public void setParkId(int parkId) {
         this.parkId = parkId;
     }
 
-    public int getParkId(){
+    public int getParkId() {
         return parkId;
     }
 }

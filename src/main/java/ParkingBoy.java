@@ -31,7 +31,7 @@ public class ParkingBoy extends Parking {
         calcCarNumber();
     }
 
-    public void calcCarNumber(){
+    public void calcCarNumber() {
         carNumber = 0;
         for (ParkingLot aParkList : parkList) {
             carNumber += aParkList.getCarNumber();
@@ -45,3 +45,5 @@ public class ParkingBoy extends Parking {
         return parkingLot;
     }
 }
+
+

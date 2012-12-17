@@ -1,7 +1,5 @@
 package main.java;
 
-import java.util.HashMap;
-
 /**
  * 作业3：SmartParkingBoy
  * User: 郑岩
@@ -42,7 +40,7 @@ public class SmartParkingBoy extends ParkingBoy {
         for (int i = 0; i < parkList.size() - 1; i++) {
             if (parkList.get(i).getFreeNumber() >= parkList.get(i + 1).getFreeNumber()) {
                 parkingLot = parkList.get(i);
-            }else{
+            } else {
                 parkingLot = parkList.get(i + 1);
             }
         }

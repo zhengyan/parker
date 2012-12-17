@@ -1,21 +1,19 @@
 package main.java;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created with IntelliJ IDEA.
- * User: Zhengyan
- * Date: 12-12-18
- * Time: 上午12:21
- * To change this template use File | Settings | File Templates.
+ * 最终作业：ParkingManager
+ * User: 郑岩
+ * Date: 12-11-25
+ * Time: 下午5:01
  */
 public class ParkingManager extends SuperParkingBoy {
-    public ArrayList<ParkingBoy> parkingBoyList = new ArrayList<ParkingBoy>();
+    public HashMap<String, ParkingBoy> parkingBoyList = new HashMap<String, ParkingBoy>();
     public HashMap<ParkingLot, ParkingBoy> parkingLotVsBoy = new HashMap<ParkingLot, ParkingBoy>();
 
-    public void addParkingBoy(ParkingBoy parkingBoy) {
-        parkingBoyList.add(parkingBoy);
+    public void addParkingBoy(String parkingBoyId, ParkingBoy parkingBoy) {
+        parkingBoyList.put(parkingBoyId, parkingBoy);
     }
 
     public ParkingLot addParkingLot(int parkingSize, ParkingBoy parkingBoy) {
@@ -42,4 +40,5 @@ public class ParkingManager extends SuperParkingBoy {
         parkingBoy.calcCarNumber();
         calcCarNumber();
     }
+
 }

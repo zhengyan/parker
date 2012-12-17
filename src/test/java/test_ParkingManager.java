@@ -29,9 +29,9 @@ public class test_ParkingManager {
         parkingBoy = new ParkingBoy();
         smartParkingBoy = new SmartParkingBoy();
         superParkingBoy = new SuperParkingBoy();
-        parkingManager.addParkingBoy(parkingBoy);
-        parkingManager.addParkingBoy(smartParkingBoy);
-        parkingManager.addParkingBoy(superParkingBoy);
+        parkingManager.addParkingBoy("ParkingBoy_001", parkingBoy);
+        parkingManager.addParkingBoy("SmartParkingBoy_001",smartParkingBoy);
+        parkingManager.addParkingBoy("SuperParkingBoy_001",superParkingBoy);
 
         parkingLot1 = parkingManager.addParkingLot(10, parkingBoy);
         parkingLot2 = parkingManager.addParkingLot(20, smartParkingBoy);

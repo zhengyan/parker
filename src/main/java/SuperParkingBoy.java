@@ -13,7 +13,7 @@ public class SuperParkingBoy extends SmartParkingBoy {
         for (int i = 0; i < parkList.size() - 1; i++) {
             if (parkList.get(i).getFreeNumber() / parkList.get(i).getParkSize() >= parkList.get(i + 1).getFreeNumber() / parkList.get(i).getParkSize()) {
                 parkingLot = parkList.get(i);
-            }else{
+            } else {
                 parkingLot = parkList.get(i + 1);
             }
         }
