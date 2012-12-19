@@ -12,6 +12,7 @@ repositories {
 
 //定义源文件存放位置
 sourceSets {
+    //noinspection GroovyAssignabilityCheck
     main {
         java.srcDir "$projectDir/src/main_zy"
     }
