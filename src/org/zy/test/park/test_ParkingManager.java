@@ -1,18 +1,18 @@
-package test.java;
+package park;
 
-import junit.framework.Assert;
-import main.java.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import static junit.framework.Assert.assertEquals;
+
 /**
- * 最终作业：ParkingManager
+ * Final Mission：ParkingManager
  * User: 郑岩
  * Date: 12-11-25
  * Time: 下午5:01
  */
 public class test_ParkingManager {
-    //**************************************   最终作业之一   **********************************************
+    //**************************************   Final Mission   **********************************************
     ParkingManager parkingManager;
     ParkingBoy  parkingBoy;
     SmartParkingBoy smartParkingBoy;
@@ -64,8 +64,8 @@ public class test_ParkingManager {
         //test_Parking
         parkingManager.parkCar(car);
         //assert
-        Assert.assertEquals(149, parkingManager.getFreeSpace());
-        Assert.assertEquals(parkingLot6.getParkSize() - 10 - 1,parkingLot6.getFreeNumber());
+        assertEquals(149, parkingManager.getFreeSpace());
+        assertEquals(parkingLot6.getParkSize() - 10 - 1, parkingLot6.getFreeNumber());
     }
 
     /**
@@ -85,9 +85,9 @@ public class test_ParkingManager {
         //test_Parking
         superParkingBoy.parkCar(car);
         //assert
-        Assert.assertEquals(69, superParkingBoy.getFreeSpace());
-        Assert.assertEquals(parkingLot3.getParkSize() - 10,parkingLot3.getFreeNumber());
-        Assert.assertEquals(parkingLot6.getParkSize() - 10 - 1,parkingLot6.getFreeNumber());
+        assertEquals(69, superParkingBoy.getFreeSpace());
+        assertEquals(parkingLot3.getParkSize() - 10, parkingLot3.getFreeNumber());
+        assertEquals(parkingLot6.getParkSize() - 10 - 1, parkingLot6.getFreeNumber());
     }
 
     /**
@@ -109,8 +109,8 @@ public class test_ParkingManager {
         ticket = parkingManager.parkCar(car);
         parkingManager.takeCar(ticket);
         //assert
-        Assert.assertEquals(150, parkingManager.getFreeSpace());
-        Assert.assertEquals(parkingLot6.getParkSize() - 10,parkingLot6.getFreeNumber());
+        assertEquals(150, parkingManager.getFreeSpace());
+        assertEquals(parkingLot6.getParkSize() - 10, parkingLot6.getFreeNumber());
     }
 
     /**
@@ -132,9 +132,9 @@ public class test_ParkingManager {
         ticket = parkingBoy.parkCar(car);
         parkingBoy.takeCar(ticket);
         //assert
-        Assert.assertEquals(30, parkingBoy.getFreeSpace());
-        Assert.assertEquals(parkingLot1.getParkSize() - 10,parkingLot1.getFreeNumber());
-        Assert.assertEquals(parkingLot4.getParkSize() - 10,parkingLot4.getFreeNumber());
+        assertEquals(30, parkingBoy.getFreeSpace());
+        assertEquals(parkingLot1.getParkSize() - 10, parkingLot1.getFreeNumber());
+        assertEquals(parkingLot4.getParkSize() - 10, parkingLot4.getFreeNumber());
     }
 
     /**
@@ -154,7 +154,7 @@ public class test_ParkingManager {
         //test_Parking
         parkingManager.parkCar(car);
         //assert
-        Assert.assertEquals(0, parkingManager.getFreeSpace());
+        assertEquals(0, parkingManager.getFreeSpace());
     }
 
     /**
@@ -174,7 +174,7 @@ public class test_ParkingManager {
         //test_Parking
         parkingBoy.parkCar(car);
         //assert
-        Assert.assertEquals(0, parkingBoy.getFreeSpace());
+        assertEquals(0, parkingBoy.getFreeSpace());
     }
 
     /**
@@ -194,7 +194,7 @@ public class test_ParkingManager {
         //test_Parking
         parkingManager.takeCar(ticket);
         //assert
-        Assert.assertEquals(150, parkingManager.getFreeSpace());
+        assertEquals(150, parkingManager.getFreeSpace());
     }
 
     /**
@@ -214,6 +214,6 @@ public class test_ParkingManager {
         //test_Parking
         parkingBoy.takeCar(ticket);
         //assert
-        Assert.assertEquals(30, parkingBoy.getFreeSpace());
+        assertEquals(30, parkingBoy.getFreeSpace());
     }
 }

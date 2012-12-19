@@ -1,8 +1,8 @@
-package test.java;
+package park;
 
-import junit.framework.Assert;
-import main.java.*;
 import org.junit.Test;
+
+import static junit.framework.Assert.assertEquals;
 
 /**
  * 作业4：SuperParkingBoy
@@ -30,9 +30,9 @@ public class test_SuperParkingBoy {
         //test_Parking
         superParkingBoy.parkCar(car);
         //assert
-        Assert.assertEquals(9, superParkingBoy.getFreeSpace());
-        Assert.assertEquals(parkingLot1.getParkSize() - 5 - 1,parkingLot1.getFreeNumber());
-        Assert.assertEquals(parkingLot2.getParkSize() - 15,parkingLot2.getFreeNumber());
+        assertEquals(9, superParkingBoy.getFreeSpace());
+        assertEquals(parkingLot1.getParkSize() - 5 - 1, parkingLot1.getFreeNumber());
+        assertEquals(parkingLot2.getParkSize() - 15, parkingLot2.getFreeNumber());
     }
 
     /**
@@ -53,9 +53,9 @@ public class test_SuperParkingBoy {
         ticket = superParkingBoy.parkCar(car);
         superParkingBoy.takeCar(ticket);
         //assert
-        Assert.assertEquals(30, superParkingBoy.getFreeSpace());
-        Assert.assertEquals(10,parkingLot1.getFreeNumber());
-        Assert.assertEquals(20,parkingLot2.getFreeNumber());
+        assertEquals(30, superParkingBoy.getFreeSpace());
+        assertEquals(10, parkingLot1.getFreeNumber());
+        assertEquals(20, parkingLot2.getFreeNumber());
     }
 
     /**
@@ -75,9 +75,9 @@ public class test_SuperParkingBoy {
         //test_Parking
         superParkingBoy.parkCar(car);
         //assert
-        Assert.assertEquals(0, superParkingBoy.getFreeSpace());
-        Assert.assertEquals(0,parkingLot1.getFreeNumber());
-        Assert.assertEquals(0,parkingLot2.getFreeNumber());
+        assertEquals(0, superParkingBoy.getFreeSpace());
+        assertEquals(0, parkingLot1.getFreeNumber());
+        assertEquals(0, parkingLot2.getFreeNumber());
     }
 
     /**
@@ -96,9 +96,9 @@ public class test_SuperParkingBoy {
         //test_Parking
         superParkingBoy.takeCar(ticket);
         //assert
-        Assert.assertEquals(30, superParkingBoy.getFreeSpace());
-        Assert.assertEquals(10,parkingLot1.getFreeNumber());
-        Assert.assertEquals(20,parkingLot2.getFreeNumber());
+        assertEquals(30, superParkingBoy.getFreeSpace());
+        assertEquals(10, parkingLot1.getFreeNumber());
+        assertEquals(20, parkingLot2.getFreeNumber());
     }
 
 }

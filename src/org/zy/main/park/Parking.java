@@ -1,4 +1,4 @@
-package main.java;
+package park;
 
 import java.util.HashMap;
 

@@ -1,4 +1,4 @@
-package main.java;
+package park;
 
 /**
  * Created with IntelliJ IDEA.

@@ -1,9 +1,9 @@
-package main.java;
+package park;
 
 import java.util.HashMap;
 
 /**
- * 最终作业：ParkingManager
+ * Final Mission：ParkingManager
  * User: 郑岩
  * Date: 12-11-25
  * Time: 下午5:01

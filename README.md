@@ -4,9 +4,9 @@ Author：郑岩 GS122153D
 ==============================
 作业描述：
 1，使用TDD方法，简单设计
-2，使用继承，减少代码量，容易维护，而且体现出简单设计的魅力
-Parking-->ParkingBoy-->SmartParkingBoy-->SuperParkingBoy-->ParkingManager
+2，使用Git进行版本管理
 3，使用Gradle对代码进行管理、构建、打包测试等
+
 
 Parking project
 

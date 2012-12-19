@@ -1,4 +1,4 @@
-package main.java;
+package park;
 
 /**
  * 作业3：SmartParkingBoy

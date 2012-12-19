@@ -1,7 +1,7 @@
-package main.java;
+package park;
 
 /**
- * 最终作业：ParkingDirector
+ * Final Mission：ParkingDirector
  * User: 郑岩
  * Date: 12-11-25
  * Time: 下午5:01
@@ -12,13 +12,15 @@ public class ParkingDirector {
         Object[] parkingBoyIdList;
         ParkingBoy parkingBoy;
         ParkingLot parkingLot;
+        String id;
         System.out.println("ParkingManager:");
         System.out.println("\t车位数：" + parkingManager.getMaxSpaceNum());
         System.out.println("\t空位数：" + parkingManager.getMaxSpaceNum());
         parkingBoyIdList = parkingManager.parkingBoyList.keySet().toArray();
         for (int i = 0; i < parkingManager.parkingBoyList.size(); i++) {
-            parkingBoy = parkingManager.parkingBoyList.get(parkingBoyIdList[i]);
-            System.out.println("ParkingBoy ID:" + parkingBoyIdList[i]);
+            id = String.valueOf(parkingBoyIdList[i]);
+            parkingBoy = parkingManager.parkingBoyList.get(id);
+            System.out.println("ParkingBoy ID:" + id);
             for (int j=0; j<parkingBoy.parkList.size();j++){
                 parkingLot = parkingBoy.parkList.get(j)  ;
                 System.out.println("\tParkingLot ID:" + parkingLot.getParkId());

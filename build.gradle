@@ -1,36 +1,32 @@
-import com.sun.org.apache.xalan.internal.xsltc.cmdline.Compile
-
+//声明Java和Idea
 apply plugin: 'java'
+apply plugin: 'eclipse'
 
-sourceCompatibility = 1.5
-version = ''
+//更改Jar名
+jar.archiveName = "parkingLotsModel.jar"
 
+//通过MavenCentral获取所需的Jar包
 repositories {
-    flatDir(dirs: "$projectDir/build/lib",include: ["*.jar"])
+    mavenCentral()
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.+'
-}
-
-test {
-    systemProperties 'property': 'value'
-}
-
-uploadArchives {
-    repositories {
-        flatDir(dirs: "$projectDir/build/lib")
-    }
-}
-
+//定义源文件存放位置
 sourceSets {
     main {
-        java.srcDir "$projectDir/src/java"
+        java.srcDir "$projectDir/src/main_zy"
     }
     test {
-        java.srcDir "$projectDir/test/java"
+        java.srcDir "$projectDir/src/test_zy"
     }
 }
+
+//增加Junit的引用
+dependencies {
+    compile group: 'junit', name: 'junit', version: '4.11'
+}
+
+//适应中文注释
 tasks.withType(Compile) {
     options.encoding = "UTF-8"
 }
+

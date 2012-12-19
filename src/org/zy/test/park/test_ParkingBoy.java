@@ -1,8 +1,8 @@
-package test.java;
+package park;
 
-import junit.framework.Assert;
-import main.java.*;
 import org.junit.Test;
+
+import static junit.framework.Assert.assertEquals;
 
 /**
  * 作业2：ParkingBoy
@@ -28,7 +28,7 @@ public class test_ParkingBoy {
         //test_Parking
         parkingBoy.parkCar(car);
         //assert
-        Assert.assertEquals(29, parkingBoy.getFreeSpace());
+        assertEquals(29, parkingBoy.getFreeSpace());
     }
 
     /**
@@ -48,7 +48,7 @@ public class test_ParkingBoy {
         ticket = parkingBoy.parkCar(car);
         parkingBoy.takeCar(ticket);
         //assert
-        Assert.assertEquals(30, parkingBoy.getFreeSpace());
+        assertEquals(30, parkingBoy.getFreeSpace());
     }
 
     /**
@@ -66,7 +66,7 @@ public class test_ParkingBoy {
         //test_Parking
         parkingBoy.parkCar(car);
         //assert
-        Assert.assertEquals(30, parkingBoy.getFreeSpace());
+        assertEquals(30, parkingBoy.getFreeSpace());
     }
 
     /**
@@ -76,7 +76,6 @@ public class test_ParkingBoy {
     @Test (expected = UnknownTID.class)
     public void test_parkingBoy_take_car_error(){
         //setup
-        Car car = new Car();
         ParkingBoy parkingBoy = new ParkingBoy();
         parkingBoy.addParkingLot(10);
         parkingBoy.addParkingLot(20);
@@ -85,6 +84,6 @@ public class test_ParkingBoy {
         //test_Parking
         parkingBoy.takeCar(ticket);
         //assert
-        Assert.assertEquals(30, parkingBoy.getFreeSpace());
+        assertEquals(30, parkingBoy.getFreeSpace());
     }
 }
